@@ -1,0 +1,27 @@
+.container {
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+img {
+
+    border-bottom: accent;
+    width: 40%;
+    height: 40%;
+    margin: 50px;
+    margin-bottom: 70px;
+}
+
+button {
+    margin: 3px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: xx-large;
+}
+h3{
+    padding: 1px;
+    font-style: italic;
+}

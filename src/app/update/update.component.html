@@ -1,0 +1,53 @@
+<button mat-stroked-button color="primary" type="button" (click)="goBackTo()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-arrow-left"
+      viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+    </svg> Back</button>
+    
+<div class="container">
+    <div class="card">
+        <h1>Update Your Credentials</h1>
+
+        <form [formGroup]="updateForm" (ngSubmit)="submitForm()">
+            <mat-form-field class="field" color="accent" appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput type="text" formControlName="name" [value]="trainee.name" required>
+            </mat-form-field>
+
+            <mat-form-field class="field" color="accent" appearance="outline">
+                <mat-label>Date Of Birth</mat-label>
+                <input matInput type="date" formControlName="dateOfBirth" [value]="trainee.dateOfBirth" required>
+            </mat-form-field>
+
+            <mat-form-field class="field" color="accent" appearance="outline">
+                <mat-label>Mobile No.</mat-label>
+                <input matInput type="tel" formControlName="contactNo" [value]="trainee.contactNo" pattern="^\d{10}$" required>
+            </mat-form-field>
+
+            <mat-form-field class="field" color="accent" appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input matInput type="email" formControlName="emailId" [value]="trainee.emailId" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" required>
+            </mat-form-field>
+
+            <mat-form-field class="field" color="accent" appearance="outline">
+                <mat-label>Address Location</mat-label>
+                <input matInput formControlName="city" [value]="trainee.city" required>
+            </mat-form-field>
+
+            <mat-form-field class="field" color="accent" appearance="outline">
+                <mat-label>About you</mat-label>
+                <textarea rows="2" matInput formControlName="aboutUs" [value]="trainee.aboutUs" required></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="field" color="accent" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" [value]="trainee.password" required>
+            </mat-form-field>
+
+            <div class="btn">
+                <button mat-raised-button color="primary" type="submit" [disabled]="!updateForm.valid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

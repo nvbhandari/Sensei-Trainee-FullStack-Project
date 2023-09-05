@@ -1,0 +1,59 @@
+  <div class="container">
+    <div class="card">
+      <h1>Register Your Credentials.</h1>
+
+      <form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+
+        <mat-form-field class="field" color="accent" appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput type="text" formControlName="name" placeholder="Ex. John Willium" required>
+        </mat-form-field>
+
+        <mat-form-field class="field" color="accent" appearance="outline">
+          <mat-label>Date Of Birth</mat-label>
+          <input matInput type="date" formControlName="dateOfBirth" placeholder="dd-mm-yyyy" required>
+        </mat-form-field>
+
+        <mat-form-field class="field" color="accent" appearance="outline">
+          <mat-label>Mobile No.</mat-label>
+          <input matInput type="tel" pattern="^\d{10}$" formControlName="contactNo" placeholder=" 942 223 7334"
+            required>
+          <div
+            *ngIf="registrationForm.get('contactNo').invalid && (registrationForm.get('contactNo').dirty || registrationForm.get('contactNo').touched)">
+            <div *ngIf="registrationForm.get('contactNo').hasError('pattern')">Invalid contact number format.</div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="field" color="accent" appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+            formControlName="emailId" placeholder="abc@gmail.com" required>
+          <div
+            *ngIf="registrationForm.get('emailId').invalid && (registrationForm.get('emailId').dirty || registrationForm.get('emailId').touched)">
+            <div *ngIf="registrationForm.get('emailId').hasError('email')">Invalid email format.</div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="field" color="accent" appearance="outline">
+          <mat-label>Address Location</mat-label>
+          <input matInput formControlName="city" placeholder="Ex. New York city" required>
+        </mat-form-field>
+
+        <mat-form-field class="field" color="accent" appearance="outline">
+          <mat-label>About you</mat-label>
+          <textarea rows="2" matInput formControlName="aboutUs" placeholder="Ex. Tell us about yourself..."
+            required></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="field" color="accent" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Ex.John@123" required>
+        </mat-form-field>
+
+        <div class="btn">
+          <button mat-raised-button color="accent" type="button" (click)="goBackTo()">Cancel</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>

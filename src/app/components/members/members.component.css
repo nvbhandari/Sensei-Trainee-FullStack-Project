@@ -1,0 +1,58 @@
+.container{
+    background-color:rgb(179, 179, 212);
+    width: 75%;
+    margin-top: 12px;
+    height: 70px;
+}
+mat-form-field{
+    margin-top: 8px;   
+}
+.table{
+    margin: auto;
+    width: 75%;
+    margin-top: 5px;
+}
+h1{
+    font-size: xx-large;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+th{
+    padding-left: 40px;  
+    font-size: 16px;
+    text-shadow: black;
+}
+tr{
+margin-bottom: 18px;
+height: 10px;
+}
+td{
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 40px;
+}
+button{
+    margin-right: 5px;
+}
+.logout{
+    margin-bottom: 15px;
+}
+
+.xyz{
+    background-color:rgb(179, 179, 212);
+    border-radius: 4px;
+    margin-top: 20px;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    font-weight: 500;
+    font-size: 15px; 
+  }
+  mat-form-field{
+      margin-left: 2px;
+      width: 150%;
+  }
+  
+  
+  
+  

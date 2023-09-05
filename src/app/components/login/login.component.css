@@ -1,0 +1,32 @@
+.container {
+    margin: auto;
+}
+
+.card {
+    background-color: whitesmoke;
+    padding: 50px;
+    column-gap: 5px;
+    width: 35%;
+    margin: auto;
+}
+
+.align{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+.field{
+    
+        margin-left: 2.5%;
+        width: 95%;
+       
+}
+.btn {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+button {
+    margin-left: 10px;
+    margin-top: 5px;
+}
