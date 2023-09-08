@@ -22,7 +22,8 @@ import { ViewComponent } from './view/view.component';
 import { UpdateComponent } from './update/update.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-
+import { AgePipe } from './pipes/age.pipe';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MatSortModule } from '@angular/material/sort';
     LoginComponent,
     MembersComponent,
     ViewComponent,
-    UpdateComponent
+    UpdateComponent,
+    AgePipe
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSelectModule
   ],
 
   providers: [MatSnackBar],

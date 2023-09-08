@@ -17,6 +17,10 @@ export class MembersComponent implements OnInit {
   dataSource!: MatTableDataSource<Trainee>;
   currentPage = 0;
 
+  columnsToFilter = ['name', 'emailId', 'location'];
+  selectedColumn: string = '';
+   filterValue: string;
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -67,11 +71,34 @@ export class MembersComponent implements OnInit {
   logOut() {
     this.authService.logOut();
   }
-  searchData($event:any){
-    this.dataSource.filter = $event.target.value; 
-  }
+
   onPageChange(event: any) {
     this.currentPage = event.pageIndex;
   }
-  
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    // Optionally, you can set the filterPredicate based on the selected column
+    switch (this.selectedColumn) {
+      case 'name':
+        this.dataSource.filterPredicate = (data, filter) =>
+          data.name.trim().toLowerCase().includes(filter);
+        break;
+      case 'emailId':
+        this.dataSource.filterPredicate = (data, filter) =>
+          data.emailId.trim().toLowerCase().includes(filter);
+        break;
+      case 'location':
+        this.dataSource.filterPredicate = (data, filter) =>
+          data.city.trim().toLowerCase().includes(filter);
+        break;
+      default:
+        this.dataSource.filter = filterValue;
+        break;
+    }
+  }
 }
+
+
